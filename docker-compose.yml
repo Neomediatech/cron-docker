@@ -12,7 +12,7 @@ services:
       << : *common-vars    
     volumes:
       - crontabs:/var/spool/cron/crontabs
-      - scripts:/scripts
+      - cron_scripts:/scripts
 
 volumes:
   crontabs:
@@ -22,7 +22,7 @@ volumes:
       o: bind
       device: /srv/data/docker/containers/cron/crontabs
 
-  scripts:
+  cron_scripts:
     driver: local
     driver_opts:
       type: none
