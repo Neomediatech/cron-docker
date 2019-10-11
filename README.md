@@ -26,4 +26,7 @@ and then
 `docker exec my-cron bash -c 'echo "root" > /var/spool/cron/crontabs/cron.update'`  
 
 ## Logs
-Cron logs output visible on docker logs (`docker logs my-cron`)
+Cron logs output visible on docker logs (`docker logs my-cron`)  
+
+## Stack
+[docker-compose.yml](docker-compose.yml) contains an example
