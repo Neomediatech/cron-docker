@@ -1,21 +1,21 @@
 Cron service on Alpine Docker container
 
-From base image Alpine added `tini bash mariadb-client` packages.
-mariadb-client package is used to run remote query on another container who runs MariaDB.
-bash installed because I prefer this shell.
-tini added because https://github.com/krallin/tini#why-tini
+From base image Alpine added `tini bash mariadb-client` packages.  
+mariadb-client package is used to run remote query on another container who runs MariaDB.  
+bash installed because I prefer this shell.  
+tini added because https://github.com/krallin/tini#why-tini  
 
 ## Running the container
-`docker run -d --name "my-cron" neomediatech/cron`
+`docker run -d --name "my-cron" neomediatech/cron`  
 
 ## Configuration
 Map a volume where you put your crontab file, for ex:  
-`docker run -d -v /srv/crontab:/var/spool/cron/crontabs --name "my-cron" neomediatech/cron`
+`docker run -d -v /srv/crontab:/var/spool/cron/crontabs --name "my-cron" neomediatech/cron`  
 
 ## Reload cron service
 No need to reload the service. If you made changes on /var/spool/cron/crontabs/root you can notify it to cron service running this command:  
 `docker exec my-cron bash -c 'echo "root" > /var/spool/cron/crontabs/cron.update'`.  
-Wait a minute (really) and cron will get the changes.
+Wait a minute (really) and cron will get the changes.  
 
 ## Running your own scripts
 Map a volume where you put your own scripts, for ex:  
