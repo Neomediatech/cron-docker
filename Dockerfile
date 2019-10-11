@@ -1,6 +1,6 @@
 FROM alpine:3.10
 
-ENV VERSION=1.0.0-r0 \ 
+ENV VERSION=1.0.0-r1 \ 
     BUILD_DATE=2019-10-11 \ 
     TZ=Europe/Rome
 
