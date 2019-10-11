@@ -13,7 +13,10 @@ LABEL maintainer="docker-dario@neomediatech.it" \
 
 RUN apk update && apk upgrade && apk add --no-cache tzdata && cp /usr/share/zoneinfo/$TZ /etc/localtime && \
     apk add --no-cache tini bash mariadb-client && \ 
-    rm -rf /usr/local/share/doc /usr/local/share/man /var/cache/apk/* 
+    rm -rf /usr/local/share/doc /usr/local/share/man /var/cache/apk/* && \ 
+    rm -f /var/spool/cron/crontabs && \ 
+    mkdir /var/spool/cron/crontabs && \
+    echo "# min	hour	day	month	weekday	command \n" > /var/spool/cron/crontabs/root
 
 ENTRYPOINT ["tini", "--"]
 CMD ["crond", "-f", "-d", "8"]
