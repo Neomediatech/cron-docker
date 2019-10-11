@@ -1,0 +1,30 @@
+# cron stack example
+version: '3.7'
+
+x-environment: &common-vars
+    TZ: Europe/Rome
+
+services:
+  cron:
+    image: neomediatech/cron
+    hostname: cron
+    environment:
+      << : *common-vars    
+    volumes:
+      - crontabs:/var/spool/cron/crontabs
+      - scripts:/scripts
+
+volumes:
+  crontabs:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /srv/data/docker/containers/cron/crontabs
+
+  scripts:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /srv/data/docker/containers/cron/scripts
