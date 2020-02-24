@@ -20,7 +20,7 @@ Wait a minute (really) and cron will get the changes.
 ## Running your own scripts
 Map a volume where you put your own scripts, for ex:  
 `docker run -d -v /srv/crontab:/var/spool/cron/crontabs -v /srv/my-scripts:/scripts --name "my-cron" neomediatech/cron`.  
-Afterwards put a line on /var/spool/cron/crontabs/root to execute the script wen you want, for ex:  
+Afterwards put a line on /var/spool/cron/crontabs/root to execute the script when you want, for ex:  
 `docker exec my-cron bash -c 'echo "0 5 * * * /scripts/my-script.sh" >> /var/spool/cron/crontabs/root'`  
 and then  
 `docker exec my-cron bash -c 'echo "root" > /var/spool/cron/crontabs/cron.update'`  
