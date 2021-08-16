@@ -1,11 +1,9 @@
-FROM alpine:3.10
+FROM alpine:3
 
-ENV VERSION=1.0.0-r1 \ 
-    BUILD_DATE=2019-10-11 \ 
+ENV BUILD_DATE=2021-08-16 \ 
     TZ=Europe/Rome
 
 LABEL maintainer="docker-dario@neomediatech.it" \ 
-      org.label-schema.version=$VERSION \
       org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.vcs-type=Git \
       org.label-schema.vcs-url=https://github.com/Neomediatech/cron-docker \
