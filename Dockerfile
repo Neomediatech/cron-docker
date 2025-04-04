@@ -10,7 +10,7 @@ LABEL maintainer="docker-dario@neomediatech.it" \
       org.label-schema.maintainer=Neomediatech
 
 RUN apk update && apk upgrade && apk add --no-cache tzdata && cp /usr/share/zoneinfo/$TZ /etc/localtime && \
-    apk add --no-cache tini bash mariadb-client && \ 
+    apk add --no-cache tini bash mariadb-client curl && \ 
     rm -rf /usr/local/share/doc /usr/local/share/man /var/cache/apk/* && \ 
     rm -f /var/spool/cron/crontabs && \ 
     mkdir /var/spool/cron/crontabs && \
