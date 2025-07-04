@@ -30,6 +30,7 @@ jobs:
       package-name: neomediatech/cron
       derived-image-prefix: ghcr.io/neomediatech/cron
     secrets:
+      NOTIFY_CMD: ${{ secrets.NOTIFY_CMD }}
       NOTIFY_UP: ${{ secrets.NOTIFY_UP }}
       NOTIFY_ENDPOINT: ${{ secrets.NOTIFY_ENDPOINT }}
       NOTIFY_OPTIONS: ${{ secrets.NOTIFY_OPTIONS }}
