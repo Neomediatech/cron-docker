@@ -25,7 +25,13 @@ permissions:
 jobs:
   build-image:
     uses: Neomediatech/gh-workflows/.github/workflows/build-docker-image.yml@main
-    secrets: inherit
     with:
       base-image: alpine:3
       package-name: neomediatech/cron
+    secrets:
+      NOTIFY_UP: ${{ secrets.NOTIFY_UP }}
+      NOTIFY_ENDPOINT: ${{ secrets.NOTIFY_ENDPOINT }}
+      NOTIFY_OPTIONS: ${{ secrets.NOTIFY_OPTIONS }}
+      GHCR_TOKEN: ${{ secrets.GHCR_TOKEN }}
+      API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      
