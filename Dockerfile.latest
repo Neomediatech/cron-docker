@@ -1,7 +1,6 @@
 FROM alpine:3
 
-ENV BUILD_DATE=2021-08-16 \ 
-    TZ=Europe/Rome
+ENV TZ=Europe/Rome
 
 LABEL maintainer="docker-dario@neomediatech.it" \ 
       org.label-schema.build-date=$BUILD_DATE \
