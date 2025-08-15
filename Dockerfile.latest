@@ -1,12 +1,10 @@
 FROM alpine:3
 
-ENV TZ=Europe/Rome
+ENV SERVICE=cron \
+    TZ=Europe/Rome
 
-LABEL maintainer="docker-dario@neomediatech.it" \ 
-      org.label-schema.build-date=$BUILD_DATE \
-      org.label-schema.vcs-type=Git \
-      org.label-schema.vcs-url=https://github.com/Neomediatech/cron-docker \
-      org.label-schema.maintainer=Neomediatech
+LABEL org.opencontainers.image.source=https://github.com/Neomediatech/${SERVICE} \
+      org.opencontainers.package.name=busybox
 
 RUN apk update && apk upgrade && apk add --no-cache tzdata && cp /usr/share/zoneinfo/$TZ /etc/localtime && \
     apk add --no-cache tini bash mariadb-client curl && \ 
