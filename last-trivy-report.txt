@@ -1,14 +1,2 @@
 -----------------------------------
-lun 21 lug 2025, 18:05:08, CEST --- ghcr.io/neomediatech/cron:latest
-
-Report Summary
-
-┌──────────────────────────────────────────────────┬────────┬─────────────────┬─────────┐
-│                      Target                      │  Type  │ Vulnerabilities │ Secrets │
-├──────────────────────────────────────────────────┼────────┼─────────────────┼─────────┤
-│ ghcr.io/neomediatech/cron:latest (alpine 3.22.1) │ alpine │        0        │    -    │
-└──────────────────────────────────────────────────┴────────┴─────────────────┴─────────┘
-Legend:
-- '-': Not scanned
-- '0': Clean (no security findings detected)
-
+lun 21 lug 2025, 18:12:13, CEST --- ghcr.io/neomediatech/cron:latest NOT SCANNED
