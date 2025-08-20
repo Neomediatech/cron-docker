@@ -4,7 +4,8 @@ ENV SERVICE=cron \
     TZ=Europe/Rome
 
 LABEL org.opencontainers.image.source=https://github.com/Neomediatech/${SERVICE} \
-      org.opencontainers.package.name=busybox
+      org.opencontainers.package.name=busybox \
+      it.neomediatech.app-label=alpine
 
 RUN apk update && apk upgrade && apk add --no-cache tzdata && cp /usr/share/zoneinfo/$TZ /etc/localtime && \
     apk add --no-cache tini bash mariadb-client curl && \ 
